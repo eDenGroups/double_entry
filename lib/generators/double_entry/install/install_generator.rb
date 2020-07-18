@@ -8,6 +8,7 @@ module DoubleEntry
       include Rails::Generators::Migration
 
       class_option :json_metadata, type: :boolean, default: true
+      class_option :sort_descriptor, type: :string, default: 'id DESC'
 
       source_root File.expand_path('../templates', __FILE__)
 
@@ -30,6 +31,10 @@ module DoubleEntry
         else
           options[:json_metadata]
         end
+      end
+
+      def sort_descriptor
+        options[:sort_descriptor]
       end
 
       def migration_version

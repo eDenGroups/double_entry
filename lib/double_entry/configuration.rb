@@ -4,9 +4,11 @@ module DoubleEntry
 
   class Configuration
     attr_accessor :json_metadata
+    attr_accessor :sort_descriptor
 
     def initialize
       @json_metadata = false
+      @sort_descriptor = 'id DESC'
     end
 
     delegate(
